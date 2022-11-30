@@ -7,7 +7,7 @@ const dark = createTheme({
     mode: "dark",
     background: {
       default: "rgb(10, 25, 41)",
-      paper: "rgb(10, 25, 41)",
+      paper: "rgb(5 17 31)",
     },
   },
 });

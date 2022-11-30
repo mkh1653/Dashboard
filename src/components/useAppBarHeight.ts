@@ -1,7 +1,7 @@
-import { useMediaQuery, useTheme } from '@mui/material';
+import { useMediaQuery, useTheme } from "@mui/material";
 
 type MinHeight = {
-  minHeight: number,
+  minHeight: number;
 };
 
 export default function useAppBarHeight(): number {
@@ -9,8 +9,8 @@ export default function useAppBarHeight(): number {
     mixins: { toolbar },
     breakpoints,
   } = useTheme();
-  const toolbarDesktopQuery = breakpoints.up('sm');
-  const toolbarLandscapeQuery = `${breakpoints.up('xs')} and (orientation: landscape)`;
+  const toolbarDesktopQuery = breakpoints.up("sm");
+  const toolbarLandscapeQuery = `${breakpoints.up("xs")}`;
   const isDesktop = useMediaQuery(toolbarDesktopQuery);
   const isLandscape = useMediaQuery(toolbarLandscapeQuery);
   let currentToolbarMinHeight;
@@ -18,8 +18,6 @@ export default function useAppBarHeight(): number {
     currentToolbarMinHeight = toolbar[toolbarDesktopQuery];
   } else if (isLandscape) {
     currentToolbarMinHeight = toolbar[toolbarLandscapeQuery];
-  } else {
-    currentToolbarMinHeight = toolbar;
   }
   return (currentToolbarMinHeight as MinHeight).minHeight;
 }

@@ -12,13 +12,7 @@ import CameraAltIcon from "@mui/icons-material/CameraAlt";
 const Profile: React.FC = () => {
   return (
     <React.Fragment>
-      <Box
-        component='form'
-        autoComplete='off'
-        noValidate
-        sx={{
-          width: "100%",
-        }}>
+      <Box component='form' autoComplete='off' noValidate sx={{ flexGrow: 1 }}>
         <Grid container direction='row' justifyContent='center' spacing={2}>
           <Grid item xs={12} mb={6}>
             <Box p={2} sx={{ textAlign: "center" }}>

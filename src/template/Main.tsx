@@ -1,5 +1,7 @@
 import Dashboard from "../pages/Dashboard";
 import Profile from "../pages/Profile";
+import TodoList from "../pages/TodoList";
+import Invoice from "../pages/Invoice";
 import { styled, useTheme } from "@mui/material/styles";
 import useAppBarHeight from "../components/useAppBarHeight";
 
@@ -22,7 +24,7 @@ const Container = styled("main", {
   backgroundColor: theme.palette.background.default,
   padding: theme.spacing(padding),
   transition: theme.transitions.create("margin", {
-    easing: theme.transitions.easing.sharp,
+    easing: theme.transitions.easing.easeOut,
     duration: 100,
   }),
   marginLeft: 0,
@@ -49,7 +51,9 @@ const Main: React.FC<MainInterface> = (props) => {
         )} * 2))`,
       }}>
       {/* <Dashboard /> */}
-      <Profile />
+      {/* <Profile /> */}
+      {/* <TodoList /> */}
+      <Invoice />
     </Container>
   );
 };

@@ -4,8 +4,11 @@ import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
 import ListItemIcon from "@mui/material/ListItemIcon";
 
-import PersonIcon from "@mui/icons-material/Person";
-import DashboardIcon from '@mui/icons-material/Dashboard';
+import DashboardIcon from "@mui/icons-material/Dashboard";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFileInvoiceDollar } from "@fortawesome/free-solid-svg-icons";
+import { faListCheck } from "@fortawesome/free-solid-svg-icons";
+import { faUser } from "@fortawesome/free-solid-svg-icons";
 
 interface DashboardMenuInterface {
   drawerState: boolean;
@@ -35,9 +38,21 @@ const DashboardMenu: React.FC<DashboardMenuInterface> = (props) => {
         </ListItemButton>
         <ListItemButton>
           <ListItemIcon>
-            <PersonIcon />
+            <FontAwesomeIcon icon={faUser} size='lg' />
           </ListItemIcon>
           <ListItemText>Profile</ListItemText>
+        </ListItemButton>
+        <ListItemButton>
+          <ListItemIcon>
+            <FontAwesomeIcon icon={faListCheck} size='lg' />
+          </ListItemIcon>
+          <ListItemText>Todo List</ListItemText>
+        </ListItemButton>
+        <ListItemButton>
+          <ListItemIcon>
+            <FontAwesomeIcon icon={faFileInvoiceDollar} size='lg' />
+          </ListItemIcon>
+          <ListItemText>Invoce</ListItemText>
         </ListItemButton>
       </List>
     </Drawer>
