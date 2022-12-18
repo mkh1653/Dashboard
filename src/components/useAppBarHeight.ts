@@ -17,7 +17,7 @@ export default function useAppBarHeight(): number {
   if (isDesktop) {
     currentToolbarMinHeight = toolbar[toolbarDesktopQuery];
   } else if (isLandscape) {
-    currentToolbarMinHeight = toolbar[toolbarLandscapeQuery];
+    currentToolbarMinHeight = { minHeight: 48 };
   }
   return (currentToolbarMinHeight as MinHeight).minHeight;
 }

@@ -18,8 +18,8 @@ import Button from "@mui/material/Button";
 
 import { styled, useTheme } from "@mui/material/styles";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faDownload } from "@fortawesome/free-solid-svg-icons/faDownload";
-import { faPrint } from "@fortawesome/free-solid-svg-icons/faPrint";
+import { faDownload } from "@fortawesome/new-solid-svg-icons";
+import { faPrint } from "@fortawesome/new-solid-svg-icons";
 
 const MyCard = styled(Card)(({ theme }) => ({
   backgroundColor:

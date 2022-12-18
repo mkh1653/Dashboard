@@ -3,6 +3,7 @@ import Profile from "../pages/Profile";
 import TodoList from "../pages/TodoList";
 import Invoice from "../pages/Invoice";
 import { styled, useTheme } from "@mui/material/styles";
+import { useMediaQuery } from "@mui/material";
 import useAppBarHeight from "../components/useAppBarHeight";
 
 interface MainInterface {
@@ -28,13 +29,14 @@ const Container = styled("main", {
     duration: 100,
   }),
   marginLeft: 0,
-  ...(drawerState && {
-    transition: theme.transitions.create("margin", {
-      easing: theme.transitions.easing.easeOut,
-      duration: theme.transitions.duration.enteringScreen,
+  ...(drawerState &&
+    useMediaQuery(theme.breakpoints.up("sm")) && {
+      transition: theme.transitions.create("margin", {
+        easing: theme.transitions.easing.easeOut,
+        duration: theme.transitions.duration.enteringScreen,
+      }),
+      marginLeft: `${drawerwidth}px`,
     }),
-    marginLeft: `${drawerwidth}px`,
-  }),
 }));
 
 const Main: React.FC<MainInterface> = (props) => {
@@ -50,10 +52,10 @@ const Main: React.FC<MainInterface> = (props) => {
           padding
         )} * 2))`,
       }}>
-      {/* <Dashboard /> */}
+      <Dashboard />
       {/* <Profile /> */}
       {/* <TodoList /> */}
-      <Invoice />
+      {/* <Invoice /> */}
     </Container>
   );
 };

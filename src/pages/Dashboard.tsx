@@ -1,6 +1,11 @@
+import Weather from "../components/Weather";
+
 const Dashboard: React.FC = () => {
   return (
-    <h1>Dashboard</h1>
+    <div>
+      <h1>Dashboard</h1>
+      <Weather />
+    </div>
   );
 };
 

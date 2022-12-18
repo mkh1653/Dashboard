@@ -34,7 +34,7 @@ const Profile: React.FC = () => {
                   <Avatar
                     children='J'
                     sx={{
-                      bgcolor: "primary.dark",
+                      bgcolor: "primary.light",
                       width: "85px",
                       height: "85px",
                     }}
@@ -43,7 +43,7 @@ const Profile: React.FC = () => {
               </IconButton>
             </Box>
           </Grid>
-          <Grid item md={5}>
+          <Grid item xs={12} md={5}>
             <TextField
               fullWidth
               id='firs-name'
@@ -51,7 +51,7 @@ const Profile: React.FC = () => {
               variant='outlined'
             />
           </Grid>
-          <Grid item md={5}>
+          <Grid item xs={12} md={5}>
             <TextField
               fullWidth
               id='last-name'
@@ -59,7 +59,7 @@ const Profile: React.FC = () => {
               variant='outlined'
             />
           </Grid>
-          <Grid item md={5}>
+          <Grid item xs={12} md={5}>
             <TextField
               fullWidth
               id='email'
@@ -68,7 +68,7 @@ const Profile: React.FC = () => {
               variant='outlined'
             />
           </Grid>
-          <Grid item md={5}>
+          <Grid item xs={12} md={5}>
             <TextField
               fullWidth
               id='birthday'
@@ -77,7 +77,7 @@ const Profile: React.FC = () => {
             />
           </Grid>
           <Grid item xs={12} md={10}>
-            <Stack spacing={4} direction='row'>
+            <Stack spacing={2} direction='row'>
               <Button color='success' variant='outlined'>
                 Save Changes
               </Button>

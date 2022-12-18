@@ -12,7 +12,8 @@ import AccountCircle from "@mui/icons-material/AccountCircle";
 import MailIcon from "@mui/icons-material/Mail";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import LightbulbIcon from "@mui/icons-material/Lightbulb";
-import { styled } from "@mui/material/styles";
+import { styled, useTheme } from "@mui/material/styles";
+import { useMediaQuery } from "@mui/material";
 
 interface HeaderInterface {
   pageName: string;
@@ -33,19 +34,22 @@ const AppBar = styled(MuiAppBar, {
     easing: theme.transitions.easing.sharp,
     duration: 100,
   }),
-  ...(drawerState && {
-    width: `calc(100% - ${drawerwidth}px)`,
-    marginLeft: `${drawerwidth}px`,
-    transition: theme.transitions.create(["margin", "width"], {
-      easing: theme.transitions.easing.easeOut,
-      duration: theme.transitions.duration.enteringScreen,
+  ...(drawerState &&
+    useMediaQuery(theme.breakpoints.up("sm")) && {
+      width: `calc(100% - ${drawerwidth}px)`,
+      marginLeft: `${drawerwidth}px`,
+      transition: theme.transitions.create(["margin", "width"], {
+        easing: theme.transitions.easing.easeOut,
+        duration: theme.transitions.duration.enteringScreen,
+      }),
     }),
-  }),
 }));
 
 const Header: React.FC<HeaderInterface> = (props) => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const isMenuOpen = Boolean(anchorEl);
+  const theme = useTheme();
+  const match = useMediaQuery(theme.breakpoints.down("sm"));
 
   const handleProfileMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
@@ -57,8 +61,7 @@ const Header: React.FC<HeaderInterface> = (props) => {
 
   const handlerTheme = () => {
     handleMenuClose();
-    
-  }
+  };
 
   const renderMenu = (
     <Menu
