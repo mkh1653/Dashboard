@@ -2,7 +2,6 @@ import React from "react";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 import { styled } from "@mui/material/styles";
-import useAppBarHeight from "./useAppBarHeight";
 
 type TodoColumnProps = {
   title: string;
@@ -11,10 +10,9 @@ type TodoColumnProps = {
 };
 
 const TodoColumn: React.FC<TodoColumnProps> = (props) => {
-  const appBarHeight = useAppBarHeight();
   const Column = styled("div")(({ theme }) => ({
     boxSizing: "border-box",
-    minHeight: `calc(100vh - ${appBarHeight}px - ${theme.spacing(3)} * 2)`,
+    minHeight: `calc(100vh - ${theme.spacing(3)} * 2)`,
     height: "100%",
     backgroundColor: theme.palette.background.paper,
     borderRadius: theme.shape.borderRadius,

@@ -6,30 +6,30 @@ import Stack from "@mui/material/Stack";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
-import { faCloudBolt } from "@fortawesome/new-duotone-svg-icons";
-import { faCloudDrizzle } from "@fortawesome/new-duotone-svg-icons";
-import { faCloudShowers } from "@fortawesome/new-duotone-svg-icons";
-import { faCloudShowersHeavy } from "@fortawesome/new-duotone-svg-icons";
-import { faCloudHail } from "@fortawesome/new-duotone-svg-icons";
-import { faSnowflake } from "@fortawesome/new-duotone-svg-icons";
-import { faCloudSnow } from "@fortawesome/new-duotone-svg-icons";
-import { faCloudSleet } from "@fortawesome/new-duotone-svg-icons";
-import { faSmog } from "@fortawesome/new-duotone-svg-icons";
-import { faSunHaze } from "@fortawesome/new-duotone-svg-icons";
-import { faHurricane } from "@fortawesome/new-duotone-svg-icons";
-import { faSun } from "@fortawesome/new-duotone-svg-icons";
-import { faMoon } from "@fortawesome/new-duotone-svg-icons";
-import { faCloudSun } from "@fortawesome/new-duotone-svg-icons";
-import { faCloudsSun } from "@fortawesome/new-duotone-svg-icons";
-import { faCloudMoon } from "@fortawesome/new-duotone-svg-icons";
-import { faCloudsMoon } from "@fortawesome/new-duotone-svg-icons";
-import { faCloud } from "@fortawesome/new-duotone-svg-icons";
-import { faClouds } from "@fortawesome/new-duotone-svg-icons";
-import { faCloudFog } from "@fortawesome/new-duotone-svg-icons";
-import { faCloudSunRain } from "@fortawesome/new-duotone-svg-icons";
-import { faCloudMoonRain } from "@fortawesome/new-duotone-svg-icons";
-import { faC } from "@fortawesome/new-solid-svg-icons";
-import { faCircle } from "@fortawesome/new-regular-svg-icons";
+import { faCloudBolt } from "./fontawesome/pro-duotone-svg-icons";
+import { faCloudDrizzle } from "./fontawesome/pro-duotone-svg-icons";
+import { faCloudShowers } from "./fontawesome/pro-duotone-svg-icons";
+import { faCloudShowersHeavy } from "./fontawesome/pro-duotone-svg-icons";
+import { faCloudHail } from "./fontawesome/pro-duotone-svg-icons";
+import { faSnowflake } from "./fontawesome/pro-duotone-svg-icons";
+import { faCloudSnow } from "./fontawesome/pro-duotone-svg-icons";
+import { faCloudSleet } from "./fontawesome/pro-duotone-svg-icons";
+import { faSmog } from "./fontawesome/pro-duotone-svg-icons";
+import { faSunHaze } from "./fontawesome/pro-duotone-svg-icons";
+import { faHurricane } from "./fontawesome/pro-duotone-svg-icons";
+import { faSun } from "./fontawesome/pro-duotone-svg-icons";
+import { faMoon } from "./fontawesome/pro-duotone-svg-icons";
+import { faCloudSun } from "./fontawesome/pro-duotone-svg-icons";
+import { faCloudsSun } from "./fontawesome/pro-duotone-svg-icons";
+import { faCloudMoon } from "./fontawesome/pro-duotone-svg-icons";
+import { faCloudsMoon } from "./fontawesome/pro-duotone-svg-icons";
+import { faCloud } from "./fontawesome/pro-duotone-svg-icons";
+import { faClouds } from "./fontawesome/pro-duotone-svg-icons";
+import { faCloudFog } from "./fontawesome/pro-duotone-svg-icons";
+import { faCloudSunRain } from "./fontawesome/pro-duotone-svg-icons";
+import { faCloudMoonRain } from "./fontawesome/pro-duotone-svg-icons";
+import { faC } from "./fontawesome/pro-solid-svg-icons";
+import { faCircle } from "./fontawesome/pro-regular-svg-icons";
 import Axios from "axios";
 
 interface Weather {
@@ -239,7 +239,7 @@ const Weather: React.FC = () => {
   return (
     <Card>
       <CardContent>
-        <Stack direction='row' alignItems='flex-end' spacing={2}>
+        <Stack direction='row' alignItems='flex-end' spacing={3}>
           <FontAwesomeIcon icon={weather.icon} size='6x' />
           <Stack>
             <Stack direction='row' alignItems='center'>

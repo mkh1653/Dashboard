@@ -1,11 +1,13 @@
+import Grid from "@mui/material/Grid";
 import Weather from "../components/Weather";
 
 const Dashboard: React.FC = () => {
   return (
-    <div>
-      <h1>Dashboard</h1>
-      <Weather />
-    </div>
+    <Grid container spacing={2}>
+      <Grid item md={3}>
+        <Weather />
+      </Grid>
+    </Grid>
   );
 };
 

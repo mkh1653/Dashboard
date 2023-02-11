@@ -1,26 +1,28 @@
 import React, { useState } from "react";
+import { Outlet } from "react-router-dom";
+import { useMediaQuery } from "@mui/material";
+import { useTheme } from "@mui/material";
 import DashboardMenu from "./DashboardMenu";
 import Header from "./Header";
 import Main from "./Main";
 
 const Template: React.FC = () => {
-  const [drawerState, setDrawerState] = useState(true);
+  const theme = useTheme();
+  const match = useMediaQuery(theme.breakpoints.down("sm"));
+  const [drawerState, setDrawerState] = useState(match ? false : true);
+  const drawerWidth = 240;
+
   const drawerToggle = () => {
     setDrawerState(!drawerState);
   };
 
-  const drawerWidth = 240;
-
   return (
     <div>
-      <DashboardMenu drawerState={drawerState} drawerWidth={drawerWidth} />
-      <Header
-        pageName='Dashboard'
-        handlerDrawer={drawerToggle}
-        drawerState={drawerState}
-        drawerWidth={drawerWidth}
-      />
-      <Main drawerState={drawerState} drawerWidth={drawerWidth} />
+      <DashboardMenu drawerWidth={drawerWidth} drawerState={drawerState} />
+      <Header drawerWidth={drawerWidth} handlerDrawer={drawerToggle} />
+      <Main drawerState={drawerState} drawerWidth={drawerWidth}>
+        <Outlet />
+      </Main>
     </div>
   );
 };
