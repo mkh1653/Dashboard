@@ -1,21 +1,26 @@
+import { ActionType } from "../action-types";
+import { Action } from "../actions";
+
 interface UsersState {
-  id: number;
-  firstName: string;
-  lastName: string;
-  birthDate: string;
-  gender: string;
-  email: string;
-  avatar: string;
-  role: string;
-  registered: string;
-  state: {
+  users: object[];
+  loading: boolean;
+  snack: {
     label: string;
-    color: string;
+    message: string;
   };
 }
 
-enum ActionType {
-    getUser
-}
+const reducer = (state: UsersState, action: Action) => {
+  switch (action.type) {
+    case ActionType.fetchUsers:
+      return { users: [], loading: true, snack: {} };
+    case ActionType.fetchUsersSuccess:
+      return { users: action.data, loading: false, snack: action.message };
+    case ActionType.fetchUsersError:
+      return { users: action.data, loading: false, snack: action.message };
+    default:
+      return state;
+  }
+};
 
-const r
+export default reducer;
